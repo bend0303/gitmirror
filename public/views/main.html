@@ -3,7 +3,7 @@
         <div class="form-group">
             <select class="form-control m-b" name="developer" ng-model="chosenDeveloper">
                 <option value="def">Choose a developer</option>
-                <option ng-repeat="code in codeStatus" value="{{developers[0]}}">{{developers[0]}}</option>
+                <option ng-repeat="developer in developers" value="{{developers[$index]}}">{{developers[$index]}}</option>
             </select>
         </div>
         <div ng-show="showRepoSelection">
