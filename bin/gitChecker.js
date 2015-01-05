@@ -2,7 +2,9 @@ var gift = require('gift');
 var _ = require('lodash');
 var Client = require('node-rest-client').Client;
 var async = require('async');
+
 var developerName = 'bend';
+
 var repos = [
     {
         name: 'bolt',
@@ -15,7 +17,7 @@ var repos = [
 ];
 
 _.each(repos, function (repo) {
-    var repoDir = require('simple-git')(repo.path);
+    var repoDir = require('../vendor/simple-git')(repo.path);
     var repoDir2 = gift(repo.path);
     var status, branchName, lastCommit, lastCommitId;
     async.waterfall([
@@ -62,7 +64,7 @@ function submitStatus(branchName, repo, lastCommit, lastCommitId, status) {
     };
     var client = new Client();
 
-    client.post("http://localhost:3000/status/update", args, function(data,response) {
+    client.post("http://test.analoc.com:81/status/update", args, function(data,response) {
         console.log(response.statusCode);
     });
 }

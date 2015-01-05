@@ -7,7 +7,7 @@ angular.module('underscore', []).factory('_', function () {
 
 var gitMirrorApp = angular.module('gitMirrorApp', [
     'ui.router',
-    'ui.bootstrap', 'underscore'
+    'ui.bootstrap', 'underscore', 'angular-md5'
 ]);
 
 gitMirrorApp.config(function ($stateProvider, $urlRouterProvider) {
