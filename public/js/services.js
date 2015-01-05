@@ -29,10 +29,6 @@ gitMirrorApp.factory('CodeStatusService', function ($http, _, $q) {
     }
 
     var service = {
-        fetchCodeStatus: function (cb) {
-
-        },
-
         getCodeStatus: function () {
             var defer = $q.defer();
             $http.get('/status/list').success(function (results) {

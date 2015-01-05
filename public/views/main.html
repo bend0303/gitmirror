@@ -13,9 +13,11 @@
                     <h5>{{repo.repo}}</h5>
 
                     <div class="ibox-tools">
-                        <span class="label label-warning-light">Branch: {{repo.branch}}</span>
+                        <span class="label label-warning-light">Branch: {{repo.branch}}</span><br/>
+                        <span class="label label-success-light" tooltip="{{repo.last_commit}}">Head: {{repo.last_commit_id}}</span>
                     </div>
                 </div>
+
                 <div class="ibox-content">
 
                     <div>
