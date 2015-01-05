@@ -1,0 +1,43 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="container">
+    <div class="form-group">
+        <select class="form-control m-b" name="developer" ng-model="chosenDevloper">
+            <option value="def">Choose a developer</option>
+            <option ng-repeat="code in codeStatus" value="{{developers[0]}}">{{developers[0]}}</option>
+        </select>
+    </div>
+            <div ng-show="showRepoSelection">
+
+                <div ng-repeat="repo in chosenDeveloperRepos" class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>{{repo.repo}}</h5>
+                        <div class="ibox-tools">
+                            <span class="label label-warning-light">Branch: {{repo.branch}}</span>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div>
+                            <div ng-repeat="(key, value) in repo.status" class="feed-activity-list">
+                                {{key | changeTitle}}
+                                <div class="feed-element">
+                                    <div style="color: green" ng-show="value.length == 0" class="media-body">
+                                        Everything is same as HEAD
+                                    </div>
+                                    <div style="color: orange" ng-show="value.length > 0" class="media-body ">
+                                        {{value[0]}}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

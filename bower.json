@@ -1,0 +1,20 @@
+{
+  "name": "gitMirror",
+  "version": "0.0.0",
+  "authors": [
+    "Ben Diamant <ben@analoc.com>"
+  ],
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
