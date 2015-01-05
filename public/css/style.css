@@ -2543,6 +2543,7 @@ code {
   margin-bottom: 0;
   padding: 14px 15px 7px;
   height: 60px;
+  cursor: pointer;
 }
 .ibox-content {
   background-color: #ffffff;
