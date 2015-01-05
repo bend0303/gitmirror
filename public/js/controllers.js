@@ -33,9 +33,9 @@ gitMirrorApp.controller('MainCtrl', ['$scope', '$rootScope', '$state','CodeStatu
  * Auth Controller
  *  @author Ben Diamant
  */
-gitMirrorApp.controller('AuthCtrl', ['$scope', '$rootScope', '$state', 'md5', function ($scope, $rootScope, $state, md5) {
+gitMirrorApp.controller('AuthCtrl', ['$scope', '$rootScope', '$state', 'md5','globalConfigs', function ($scope, $rootScope, $state, md5, globalConfigs) {
     $scope.password = '';
-    $scope.passtomathc = '2630ffed2ff99b7af4161b7bd659f209';
+    $scope.passtomathc = globalConfigs.global.passwordHash;
     $scope.showBadPass = false;
     $scope.submitForm = function () {
         if (md5.createHash($scope.password) == $scope.passtomathc) {

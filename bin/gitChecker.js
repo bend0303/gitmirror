@@ -2,19 +2,11 @@ var gift = require('gift');
 var _ = require('lodash');
 var Client = require('node-rest-client').Client;
 var async = require('async');
+var config = require('config');
 
-var developerName = 'bend';
+var developerName = config.gitChecker.developerName;
 
-var repos = [
-    {
-        name: 'bolt',
-        path: '/Users/bend/Documents/Analoc/bolt'
-    },
-    {
-        name: 'Lilu',
-        path: '/Users/bend/Documents/Analoc/AnalocMobileApp'
-    }
-];
+var repos = config.gitChecker.repos;
 
 _.each(repos, function (repo) {
     var repoDir = require('../vendor/simple-git')(repo.path);
@@ -63,8 +55,8 @@ function submitStatus(branchName, repo, lastCommit, lastCommitId, status) {
         headers:{"Content-Type": "application/json"}
     };
     var client = new Client();
-
-    client.post("http://test.analoc.com:81/status/update", args, function(data,response) {
+    var server = config.gitChecker.server;
+    client.post(server + "/status/update", args, function(data,response) {
         console.log(response.statusCode);
     });
 }
