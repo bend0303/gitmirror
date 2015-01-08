@@ -1,0 +1,19 @@
+/**
+ * Author [bend]
+ */
+
+'use strict';
+
+module.exports = {
+    gitChecker: {
+        developerName: '<gitUserName>',
+        server: '<gitMirrorServerAndPort>',
+        repos: [
+            {
+                name: '<repoName>',
+                path: '<LocalRepoAbsolutePath>'
+            }
+        ]
+    }
+
+}
